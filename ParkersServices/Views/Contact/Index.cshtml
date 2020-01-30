@@ -1,0 +1,82 @@
+﻿@model CommentModel
+@using System.Data
+@using System.Data.SqlClient
+@using System.Linq
+@using System.Xml.Linq
+@using ParkersServices.Models
+@{
+    ViewData["Title"] = "Contact";
+}
+<link rel="stylesheet" href="~/css/contact.css" />
+
+<article>
+    <section id="com">
+        <div></div>
+        <h2>Comments</h2>
+        <div style="border: none; padding: 0 1rem;">
+            <b class="organizationName">Organization Name</b>
+            <p class="post"><b class="user">User</b>Post</p>
+        </div>
+        <hr />
+        @{
+            using (var context = new CommentsDbContext())
+            {
+                context.Database.EnsureCreated();
+                foreach (var m in context.Comments.ToList())
+                {
+                    <div>
+                        <b class="organizationName">@m.OrganizationName</b>
+                        <p class="post"><b class="user">@m.User</b>@m.Post</p>
+                    </div>
+                }
+            }
+        }
+    </section>
+    <section id="con">
+        <div></div>
+        <h2>Contact Information</h2>
+        <ul>
+            <li>
+                <b>Email:</b>
+                <ul>
+                    <li>
+                        <b>Personal: <br /> </b>
+                        <a href="mailto: redrevyol@gmail.com">redrevyol@gmail.com(<i>preferred</i>)</a>
+                        <a href="mailto: redrevyol647@hotmail.com">redrevyol647@hotmail.com</a>
+                    </li>
+                    <li><b>Work: <br /> </b><a href="mailto: predford@amazon.com">predford@amazon.com</a></li>
+                    @*<li><b>Personal/Work: <br /> </b><a href="mailto: predford@predford.com">predford@predford.com</a></li>*@
+                </ul>
+            </li>
+            <li>
+                <p><b>Phone/Cell:</b> <br /> <a href="tel:+9169754940">(321)474-6234</a></p>
+            </li>
+        </ul>
+        <hr />
+        <div>
+            <h2>Post a comment</h2>
+            <form asp-action="Create" asp-controller="Contact" method="post">
+                <div>
+                    <label asp-for="OrganizationName" class="businessName">Organization Name</label>
+                    <input asp-for="OrganizationName" />
+                </div>
+                <div>
+                    <label asp-for="User" class="user">User</label>
+                    <input asp-for="User" name="User" />
+                    <span asp-validation-for="User"></span>
+                </div>
+                <div>
+                    <label asp-for="Post" class="post">Post</label>
+                    <textarea rows="6" asp-for="Post" name="Post"></textarea>
+                    <span asp-validation-for="Post"></span>
+                </div>
+                <button type="submit" value="Submit">Submit</button>
+            </form>
+        </div>
+    </section>
+</article>
+<script>
+    let a = document.getElementsByTagName("a")[3];
+    a.style.color = "dodgerblue";
+    a.style.borderColor = "dodgerblue";
+</script>

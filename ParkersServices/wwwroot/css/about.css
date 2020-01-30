@@ -1,0 +1,16 @@
+﻿article ul {
+    list-style: circle;
+}
+img {
+    width: 30vw;
+    border-radius: 10%;
+    margin: 3rem;
+}
+section div {
+    display: flex;
+    flex-direction: row;
+}
+section div p {
+    vertical-align: middle;
+    align-self: center;
+}

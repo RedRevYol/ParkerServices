@@ -1,0 +1,14 @@
+﻿hr {
+    color: white;
+    box-shadow: 0 0 7px white;
+    width: 80%;
+}
+section ul {
+    list-style: circle;
+}
+section ul li:before {
+    color: azure;
+}
+section li {
+    margin: 0.5rem 0;
+}

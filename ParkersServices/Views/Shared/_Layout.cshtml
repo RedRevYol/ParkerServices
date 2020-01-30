@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Parker's Services</title>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <link rel="stylesheet" href="~/css/main.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="~/files/images/logo.png"/>
+            <ul>
+                <li>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Services", "Services", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Experience", "Experience", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Contact", "Index", "Contact")
+                </li>
+                <li>
+                    @Html.ActionLink("About", "About", "Home")
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2019 <span style="margin: 0 1rem;" class="organizationName">Parker Redford Services</span></p>
+        <div>
+            <a href="/files/Resume.docx" download="Resume">Resume</a>
+            @Html.ActionLink("Contact", "Index", "Contact")
+        </div>
+
+    </footer>
+    <script src="~/js/main.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿hr {
+    margin: 3rem auto;
+    width: 80%;
+    border: solid 1px white;
+    box-shadow: 0 0 7px white;
+}
+.businessName {
+    color: #6fb4ff;
+}
+.user {
+    color: lightgreen;
+}
+.user:not(label) {
+    margin: 0 0.5rem;
+    margin-left: 2rem;
+}
+p, form div:nth-child(3) label {
+    color: azure;
+}
+#con {
+    z-index: 0;
+}
+#con>ul {
+    padding: 2rem;
+}
+article a {
+    margin: 0 1.5rem;
+}
+article span {
+    color: lightyellow;
+}
+#com div:not(:first-of-type) {
+   border: solid 1px azure;
+   padding: 1rem;
+   margin: 1rem;
+}
+#com span {
+    margin: 0 1rem;
+}
+section li::before {
+    display: none;
+}
+form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+form span {
+    color: red;
+}
+form div {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+form button {
+    width: max-content;
+    padding: 0.5rem 1rem
+}
+form button:hover {
+    background-color: lightblue;
+    cursor: pointer;
+    color: black;
+}
+form, #con>ul {
+    border: dotted 2px silver;
+}
+form input,
+form textarea,
+form button {
+    border: solid 1px white;
+    background-color: black;
+    color: white;
+}
+form textarea,
+form input {
+    letter-spacing: 2px;
+}
+@media only screen and (min-width: 768px) {
+    article {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+    #com {
+        width: 100rem;
+    }
+    #con {
+        position: sticky;
+        top: 9rem;
+        
+    }
+    #com div:not(:first-of-type) {
+        border: solid 1px azure;
+        margin: 2rem;
+     }
+}
